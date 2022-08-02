@@ -3,5 +3,5 @@ if (process.NODE_ENV !== "production") {
 }
 
 module.exports = {
-  PORT: process.env.PORT,
+  PORT: process.env.APP_PORT,
 };
