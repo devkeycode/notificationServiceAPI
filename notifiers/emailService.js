@@ -1,6 +1,6 @@
 //This is emailService Notifier ,purpose to create a notifier(transporter) is to send the mail through its method.
 
-const { host, port, user, pass } = require("../configs/server.config");
+const { host, port, user, pass } = require("../configs/mail.config");
 
 const nodemailer = require("nodemailer");
 
@@ -12,5 +12,5 @@ module.exports = nodemailer.createTransport({
     user: user,
     pass: pass,
   },
-  // secure: true
+  // secure: true,
 });

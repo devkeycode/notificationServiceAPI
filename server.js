@@ -21,7 +21,8 @@ mongoose.connect(
 //attach the router middleware
 //attach rotuer to server by passing app object
 require("./routes/notificationRoute")(app);
-
+//attach the scheduler
+require("./schedulers/emailSchedulerService");
 app.listen(PORT, () => {
   console.log("App started listening at port ", PORT);
 });

@@ -25,7 +25,7 @@ const transporter = nodemailer.createTransport({
 
 const mailDataObject = {
   from: "notificationService-no-reply@email.com",
-  to: "sample@email.com",
+  to: ["sample123@email.com", "sample2@email.com"],
   subject: "Testing the code 2 for sending the mail",
   text: "Demo sample text 2",
   html: "<b>Hello From nodemailer 2</b>",
