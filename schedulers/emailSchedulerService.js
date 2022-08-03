@@ -30,16 +30,16 @@ cron.schedule(cronExpression, async () => {
       to: notification.recipientEmails,
       subject: notification.subject,
       text: notification.content,
-      html: "<b>Greetings from Notification Service</b>",
     };
-    console.log("mail object", mailObject);
+    // console.log("mail object", mailObject);
 
     //use emailTransporter to send the messages
     emailTransporter.sendMail(mailObject, async (error, info) => {
       if (error) {
         console.error("Error while sending email", error.message);
       } else {
-        console.log("Sucessfully sent the mails", info);
+        console.log("Sucessfully sent the mails");
+        // console.log("Sucessfully sent the mails", info);
 
         //NOTE:here notification object is a transient object(an object which still attach to the db(since got an notifcationsList and notification is a part of that list, (content of that array,if attached means transient,else not transient.The purpose of this is to update the property directly and execute save method over individual notification object directly,instead of requerying the individual notification over the db again)))
 
