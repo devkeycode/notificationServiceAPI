@@ -2,40 +2,30 @@
 
 const mongoose = require("mongoose");
 const { statuses } = require("../utils/constants");
-const notificationSchema = new mongoose.Schema({
-  recipientEmails: {
-    type: [String],
-    required: true,
-  },
-  subject: {
-    type: String,
-    required: true,
-  },
-  content: {
-    type: String,
-    required: true,
-  },
-  requester: {
-    type: String,
-  },
-  status: {
-    type: String,
-    enum: [statuses.sent, statuses.unsent],
-    default: statuses.unsent,
-  },
-  createdAt: {
-    type: Date,
-    default: () => {
-      return Date.now();
+const notificationSchema = new mongoose.Schema(
+  {
+    recipientEmails: {
+      type: [String],
+      required: true,
     },
-    immutable: true,
-  },
-  updatedAt: {
-    type: Date,
-    default: () => {
-      return Date.now();
+    subject: {
+      type: String,
+      required: true,
+    },
+    content: {
+      type: String,
+      required: true,
+    },
+    requester: {
+      type: String,
+    },
+    status: {
+      type: String,
+      enum: [statuses.sent, statuses.unsent],
+      default: statuses.unsent,
     },
   },
-});
+  { timestamps: true, versionKey: false }
+);
 
 module.exports = mongoose.model("Notification", notificationSchema);

@@ -4,7 +4,8 @@
   "description": "NotificationService API - to send messages to the user(usually email notification)",
   "main": "server.js",
   "scripts": {
-    "start": "nodemon server.js"
+    "start": "nodemon server",
+    "prod": "node server"
   },
   "repository": {
     "type": "git",
